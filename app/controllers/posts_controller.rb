@@ -12,8 +12,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find params[:id]
     render :text => %[{
-      title : "#{@post.title}",
-      body  : "#{@post.body}"
+      title : "#{@post.title.gsub('"','\"')}",
+      body  : "#{@post.body.gsub('"','\"')}"
      }]
   end
 
