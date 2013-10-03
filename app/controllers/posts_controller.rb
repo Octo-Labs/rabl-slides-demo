@@ -10,11 +10,6 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find params[:id]
-    render :text => %[{
-      title : "#{@post.title.gsub('"','\"')}",
-      body  : "#{@post.body.gsub('"','\"')}"
-     }]
   end
 
   # GET /posts/new
