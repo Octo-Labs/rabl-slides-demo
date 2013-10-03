@@ -10,6 +10,11 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.find params[:id]
+    render :text => %[{
+      title : "#{@post.title}",
+      body  : "#{@post.body}"
+     }]
   end
 
   # GET /posts/new
